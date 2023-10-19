@@ -1,0 +1,53 @@
+$primary-color: #1976D2;
+
+.sound-recordings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  h2 {
+    font-size: 24px;
+    color: $primary-color;
+  }
+
+  .mat-table {
+    width: 100%;
+    min-width: 500px;
+    margin-top: 20px;
+
+    .mat-header-cell {
+      background-color: $primary-color;
+      color: white;
+    }
+
+    .mat-cell {
+      padding: 10px;
+    }
+
+    .mat-row {
+      cursor: pointer;
+
+      &:hover {
+        background-color: lighten($primary-color, 20%);
+      }
+    }
+  }
+
+  .audio-player {
+    margin-top: 20px;
+
+    h3 {
+      font-size: 18px;
+      color: $primary-color;
+      text-align: center;
+    }
+
+     audio {
+      width: 100%;
+      min-width: 300px;
+      max-width: 100%;
+    }
+  }
+
+}

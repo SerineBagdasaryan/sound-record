@@ -1,0 +1,24 @@
+<div class="sound-recordings-container">
+<h2>Sound Recordings</h2>
+<mat-table [dataSource]="soundRecordings" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let recording">{{ recording.id }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="soundName">
+    <mat-header-cell *matHeaderCellDef>Sound Name</mat-header-cell>
+    <mat-cell *matCellDef="let recording">{{ recording.soundName }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="soundFileName">
+    <mat-header-cell *matHeaderCellDef>Sound File Name</mat-header-cell>
+    <mat-cell *matCellDef="let recording">{{ recording.soundFileName }}</mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row class="play-sound" *matRowDef="let row; columns: displayedColumns" (click)="playSound(row.soundFileName)"></mat-row>
+</mat-table>
+
+<div *ngIf="selectedSound" class="audio-player">
+  <h3>Now Playing:</h3>
+  <audio controls [src]="selectedSound"></audio>
+</div>
+</div>
