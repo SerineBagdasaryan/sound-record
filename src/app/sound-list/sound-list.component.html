@@ -1,4 +1,4 @@
-<div class="sound-recordings-container">
+<div class="sound-recordings-container" *ngIf="soundRecordings$ | async as soundRecordings">
 <h2>Sound Recordings</h2>
 <mat-table [dataSource]="soundRecordings" class="mat-elevation-z8">
   <ng-container matColumnDef="id">
